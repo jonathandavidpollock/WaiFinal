@@ -12,22 +12,22 @@ export default class Home extends Component {
     render() {
         const {navigate} = this.props.navigation;
         return (
-            <View style={styles.container}>
+            <ScrollView  contentContainerStyle={styles.container}>
                 <View style={styles.imageContainer}>
                     <Image
                         source={logo}
                         style={styles.logo}
                         />
                 </View>
-                <ScrollView contentContainerStyle={styles.contentContainer}>
+                <View style={styles.contentContainer}>
                     <View style={styles.mediaContainer}>
                      {getMedia()}
                     </View>
                     <View style={styles.mediaContainer}>
                      {getMedia()}
                     </View>
-                </ScrollView>
-            </View>
+                </View>
+            </ScrollView>
         )
     }
 }
@@ -46,22 +46,22 @@ const getMedia = () => {
 
 const styles = StyleSheet.create({
     container:{
-        flex:1,
         backgroundColor:'#222222',
     },
     imageContainer: {
-       
+        height:150,
+        alignSelf:'stretch',
+        flexDirection:'row',
     },
     logo: {
-        alignSelf:"stretch"
-
+        alignSelf:"stretch",
+        height:150
     },
     mediaContainer: {
-        margin:15
+        margin:15,
     },
     contentContainer: {
-        flexDirection:'row',
-
+        flexDirection:'row'
     }
 
 })
