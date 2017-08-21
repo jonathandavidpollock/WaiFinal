@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Button, Image, StyleSheet, ScrollView } from 'react-native';
+import { Text, View, Button, Image, StyleSheet, ScrollView, Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 import logo from '../img/Main.jpg'
 import Media from '../components/media'
@@ -55,7 +55,8 @@ const styles = StyleSheet.create({
     },
     logo: {
         alignSelf:"stretch",
-        height:150
+        height:150,
+        width: Dimensions.get("window").width,
     },
     mediaContainer: {
         margin:15,
