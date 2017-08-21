@@ -10,13 +10,6 @@ export default class Home extends Component {
         return (
             <View>
                 <Text>Home Page</Text>
-                <Button
-                    onPress= {
-                        ()=> navigate("Second", {})
-                        }
-                    title="Go to Screen 2"
-                    
-                     /> 
             </View>
         )
     }
