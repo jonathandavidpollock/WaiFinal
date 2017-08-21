@@ -5,6 +5,7 @@ import Home from './screens/Home'
 import Messages from './screens/Messages'
 import More from './screens/More'
 import Events from './screens/Events'
+// import { Home, Messages, More, Events } from './screens'
 
 const Navigation = TabNavigator({
   Home: {screen: Home},
