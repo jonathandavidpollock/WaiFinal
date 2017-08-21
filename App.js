@@ -11,13 +11,17 @@ export const Heading = StackNavigator({
   Home: {
     screen: Home, 
     navigationOptions: {
-      title:"Discovery"
+      title:`Discovery`.toUpperCase(),
+      headerStyle: {
+        backgroundColor:'#41873f',
+      },
+      headerTintColor:'#ffffff'
     }
   },
   Messages: {
     screen: Messages,
     navigationOptions: {
-      title:"Messages"
+      title:"Messages", 
     }
   },
   Events: {
