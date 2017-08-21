@@ -1,14 +1,41 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { TabNavigator } from 'react-navigation'
+import { TabNavigator, StackNavigator } from 'react-navigation'
 import Home from './screens/Home'
 import Messages from './screens/Messages'
 import More from './screens/More'
 import Events from './screens/Events'
 // import { Home, Messages, More, Events } from './screens'
 
+export const Heading = StackNavigator({
+  Home: {
+    screen: Home, 
+    navigationOptions: {
+      title:"Discovery"
+    }
+  },
+  Messages: {
+    screen: Messages,
+    navigationOptions: {
+      title:"Messages"
+    }
+  },
+  Events: {
+    screen: Events,
+    navigationOptions: {
+      title:"Events"
+    }
+  },
+  More: {
+    screen: More,
+    navigationOptions: {
+      title:"More"
+    }
+  },
+})
+
 const Navigation = TabNavigator({
-  Home: {screen: Home},
+  Home: {screen: Heading},
   Messages: {screen: Messages},
   Events: {screen: Events},
   More: {screen: More},
