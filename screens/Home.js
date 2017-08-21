@@ -4,8 +4,8 @@ import Icon from 'react-native-vector-icons/Ionicons'
 
 export default class Home extends Component {
     static navigationOptions = {
-        tabBarLabel: 'Home',
-        tabBarIcon: ()=><Icon name="ios-list" size={32} /> 
+        tabBarLabel: 'Discovery',
+        tabBarIcon: ({tintColor})=><Icon name="ios-list" size={32} color={tintColor} /> 
     };
     render() {
         const {navigate} = this.props.navigation;

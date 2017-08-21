@@ -12,6 +12,14 @@ const Navigation = TabNavigator({
   Messages: {screen: Messages},
   Events: {screen: Events},
   More: {screen: More},
+}, {
+  tabBarOptions: {
+    style: {
+      backgroundColor: '#1A1B1C',
+    },
+    activeTintColor: '#FFFFFF',
+    inactiveTintColor: '#969798',
+  }
 });
 
 

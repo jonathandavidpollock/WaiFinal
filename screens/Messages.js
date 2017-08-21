@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 export default class Messages extends Component {
     static navigationOptions = {
         title: 'Messages',
-        tabBarIcon: ()=><Icon name="ios-bookmarks-outline" size={32} /> 
+        tabBarIcon: ({tintColor})=><Icon name="ios-bookmarks-outline" size={32} color={tintColor}/> 
       };
     render() {
         const {navigate} = this.props.navigation;
