@@ -19,23 +19,35 @@ export default class Home extends Component {
                         style={styles.logo}
                         />
                 </View>
-                <ScrollView style={styles.contentContainer}>
-                    <Media/>
-                    <Media/>
-                    <Media/>
-                    <Media/>
-                    <Media/>
-                    <Media/>
+                <ScrollView contentContainerStyle={styles.contentContainer}>
+                    <View style={styles.mediaContainer}>
+                     {getMedia()}
+                    </View>
+                    <View style={styles.mediaContainer}>
+                     {getMedia()}
+                    </View>
                 </ScrollView>
             </View>
         )
     }
 }
 
+const getMedia = () => {
+    return(
+        <View>
+            <Media/>
+            <Media/>
+            <Media/>
+            <Media/>
+        </View>
+    );
+}
+
 
 const styles = StyleSheet.create({
     container:{
-        flex:1
+        flex:1,
+        backgroundColor:'#222222',
     },
     imageContainer: {
        
@@ -44,9 +56,12 @@ const styles = StyleSheet.create({
         alignSelf:"stretch"
 
     },
+    mediaContainer: {
+        margin:15
+    },
     contentContainer: {
-        flex: 1,
-        backgroundColor:'#222222',
+        flexDirection:'row',
+
     }
 
 })

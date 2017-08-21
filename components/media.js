@@ -27,16 +27,18 @@ const styles = StyleSheet.create({
 
     },
     imageContainer: {
-
+       
     },
     img: {
-
+        width:160,
+        height:160
     },
     contentContainer: {
 
     },
     subText:{
-        
+        fontSize:12,
+        color:'#D0D0D0'
     }
 })
 
