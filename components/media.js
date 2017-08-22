@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, TouchableHighlight, Image, StyleSheet, Linking } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons'
+// import Icon from 'react-native-vector-icons/Ionicons'
 import img from '../img/WatchLive.jpg'
 
 

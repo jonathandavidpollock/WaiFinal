@@ -1,22 +1,38 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { TabNavigator, StackNavigator } from 'react-navigation'
-import Home from './screens/Home'
-import Messages from './screens/Messages'
-import More from './screens/More'
-import Events from './screens/Events'
-// import { Home, Messages, More, Events } from './screens'
+import { TabNavigator, StackNavigator, DrawerNavigator } from 'react-navigation'
+import { Home, Messages, More, Events } from './screens'
+import Icon from 'react-native-vector-icons/Ionicons'
+
+export const SideBar = DrawerNavigator({
+  Home: {
+    screen: Home,
+    navigationOptions: {
+      drawer: {
+          label: 'Drawer 1',
+          icon: ({ tintColor }) => <Icon name="" size={24} />
+      },
+  },
+  },
+  Inbox: {
+    screen: Home
+  },
+  Settings: {
+    screen: Home
+  },
+})
 
 export const Heading = StackNavigator({
   Home: {
     screen: Home, 
-    navigationOptions: {
+    navigationOptions: ({ navigation, tintColor }) => ({
       title:`Discovery`.toUpperCase(),
       headerStyle: {
         backgroundColor:'#41873f',
       },
+      headerLeft: <Icon name="md-menu" size={28} style={styles.hamburger} onPress={ () => navigation.navigate('DrawerOpen') } />,
       headerTintColor:'#ffffff'
-    }
+    }),
   },
   Messages: {
     screen: Messages,
@@ -39,11 +55,14 @@ export const Heading = StackNavigator({
 })
 
 const Navigation = TabNavigator({
-  Home: {screen: Heading},
+  Home: {screen: Home},
   Messages: {screen: Messages},
   Events: {screen: Events},
   More: {screen: More},
 }, {
+  style: {
+    backgroundColor:'#1A1B1C',
+  },
   tabBarOptions: {
     style: {
       backgroundColor: '#1A1B1C',
@@ -53,5 +72,11 @@ const Navigation = TabNavigator({
   }
 });
 
+const styles = StyleSheet.create({
+  hamburger: {
+    color:'#ffffff',
+    paddingLeft:10,
+  }
+})
 
-export default Navigation
+export default Heading
