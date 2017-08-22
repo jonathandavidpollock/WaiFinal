@@ -22,7 +22,7 @@ export const SideBar = DrawerNavigator({
   },
 })
 
-export const Heading = StackNavigator({
+export const HomeStack = StackNavigator({
   Home: {
     screen: Home, 
     navigationOptions: ({ navigation, tintColor }) => ({
@@ -37,31 +37,67 @@ export const Heading = StackNavigator({
       headerTintColor:'#ffffff'
     }),
   },
+
+})
+
+export const MessagesStack = StackNavigator({
   Messages: {
-    screen: Messages,
-    navigationOptions: {
-      title:"Messages", 
-    }
-  },
+    screen: Messages, 
+    navigationOptions: ({ navigation, tintColor }) => ({
+      title:`Messages`.toUpperCase(),
+      headerStyle: {
+        backgroundColor:'#41873f',
+      },
+      headerLeft:(
+        <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
+          <Icon name="md-menu" size={28} style={styles.hamburger} />
+        </TouchableOpacity>), 
+      headerTintColor:'#ffffff'
+    }),
+  }
+})
+
+
+export const EventsStack = StackNavigator({
   Events: {
-    screen: Events,
-    navigationOptions: {
-      title:"Events"
-    }
-  },
+    screen: Events, 
+    navigationOptions: ({ navigation, tintColor }) => ({
+      title:`Events`.toUpperCase(),
+      headerStyle: {
+        backgroundColor:'#41873f',
+      },
+      headerLeft:(
+        <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
+          <Icon name="md-menu" size={28} style={styles.hamburger} />
+        </TouchableOpacity>), 
+      headerTintColor:'#ffffff'
+    }),
+  }
+})
+
+
+export const MoreStack = StackNavigator({
   More: {
-    screen: More,
-    navigationOptions: {
-      title:"More"
-    }
+    screen: More, 
+    navigationOptions: ({ navigation, tintColor }) => ({
+      title:`More`.toUpperCase(),
+      headerStyle: {
+        backgroundColor:'#41873f',
+      },
+      headerLeft:(
+        <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
+          <Icon name="md-menu" size={28} style={styles.hamburger} />
+        </TouchableOpacity>), 
+      headerTintColor:'#ffffff'
+    }),
   }
 })
 
 const Navigation = TabNavigator({
-  Home: {screen: Home},
-  Messages: {screen: Messages},
-  Events: {screen: Events},
-  More: {screen: More},
+  Home: {screen: HomeStack},
+  Messages: {screen: MessagesStack},
+  Events: {screen: EventsStack},
+  More: {screen: MoreStack},
 }, {
   style: {
     backgroundColor:'#1A1B1C',
@@ -82,13 +118,5 @@ const styles = StyleSheet.create({
   }
 })
 
-// const combinedNav = () => {
-//   return(
-//     <View>
-//       <Heading/>
-//       <SideBar />
-//     </View>
-//   )
-// }
 
-export default Heading
+export default Navigation
