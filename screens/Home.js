@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Button, Image, StyleSheet, ScrollView, Dimensions } from 'react-native';
+import { Text, View, Button, Image, StyleSheet, ScrollView, Dimensions, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 import logo from '../img/Main.jpg'
 import Media from '../components/media'
@@ -35,10 +35,18 @@ export default class Home extends Component {
 const getMedia = () => {
     return(
         <View>
-            <Media/>
-            <Media/>
-            <Media/>
-            <Media/>
+            <TouchableOpacity>
+                <Media/>
+            </TouchableOpacity>
+            <TouchableOpacity>
+                <Media/>
+            </TouchableOpacity>
+            <TouchableOpacity>
+                <Media/>
+            </TouchableOpacity>
+            <TouchableOpacity>
+                <Media/>
+            </TouchableOpacity>
         </View>
     );
 }

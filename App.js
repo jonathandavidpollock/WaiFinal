@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { TabNavigator, StackNavigator, DrawerNavigator } from 'react-navigation'
 import { Home, Messages, More, Events } from './screens'
 import Icon from 'react-native-vector-icons/Ionicons'
@@ -30,7 +30,10 @@ export const Heading = StackNavigator({
       headerStyle: {
         backgroundColor:'#41873f',
       },
-      headerLeft: <Icon name="md-menu" size={28} style={styles.hamburger} onPress={ () => navigation.navigate('DrawerOpen') } />,
+      headerLeft:(
+        <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
+          <Icon name="md-menu" size={28} style={styles.hamburger} />
+        </TouchableOpacity>), 
       headerTintColor:'#ffffff'
     }),
   },
@@ -51,7 +54,7 @@ export const Heading = StackNavigator({
     navigationOptions: {
       title:"More"
     }
-  },
+  }
 })
 
 const Navigation = TabNavigator({
@@ -78,5 +81,14 @@ const styles = StyleSheet.create({
     paddingLeft:10,
   }
 })
+
+// const combinedNav = () => {
+//   return(
+//     <View>
+//       <Heading/>
+//       <SideBar />
+//     </View>
+//   )
+// }
 
 export default Heading
