@@ -4,6 +4,7 @@ import { TabNavigator, StackNavigator, DrawerNavigator } from 'react-navigation'
 import { Home, Messages, More, Events, Login } from '../screens'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { connect } from 'react-redux'
+import { logout } from '../redux/actions/auth';
 import * as ActionCreators from '../redux/actions/auth'
 import bindActionCreators from 'redux'
 
@@ -26,6 +27,11 @@ export const SideBar = DrawerNavigator({
   },
 })
 
+// function userLogout(e) {
+//   this.props.onLogout();
+//   e.preventDefault();
+// }
+
 export const HomeStack = StackNavigator({
   Home: {
     screen: Home, 
@@ -38,6 +44,11 @@ export const HomeStack = StackNavigator({
         <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
           <Icon name="md-menu" size={28} style={styles.hamburger} />
         </TouchableOpacity>), 
+      headerRight:(
+        <TouchableOpacity onPress={() => console.log(this)}>
+          <Icon name="ios-power-outline" size={28} style={styles.logout} />
+        </TouchableOpacity>), 
+
       headerTintColor:'#ffffff'
     }),
   }
@@ -119,18 +130,24 @@ const styles = StyleSheet.create({
   hamburger: {
     color:'#ffffff',
     paddingLeft:10,
+  },
+  logout: {
+    color: '#ffffff',
+    paddingRight:10,
   }
 })
 
-function mapStateToProps(state) {
- return { user: state.user }
+ 
+const mapStateToProps = (state, ownProps) => {
+  return {
+      isLoggedIn: state.auth.isLoggedIn
+  };
 }
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return {
-    Actions: bindActionCreators(ActionCreators, dispatch)
+      onLogout: () => { dispatch(logout()); }
   }
 }
 
-
-export default Router
+export default connect(mapStateToProps, mapDispatchToProps)(Router)

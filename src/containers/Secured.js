@@ -17,7 +17,6 @@ class Secured extends Component {
     }
 }
 
-{/* <Button onPress={(e) => this.userLogout(e)} title="Logout"/> */}
  
 const mapStateToProps = (state, ownProps) => {
     return {

@@ -10,19 +10,33 @@ class Login extends Component {
         this.state = {
             route: 'Login',
             username: '',
-            password: ''
+            password: '',
+            placeholderUsername:'username',
+            placeholderPassword: 'password',
         };
     }
  
     userLogin (e) {
-        this.props.onLogin(this.state.username, this.state.password);
         e.preventDefault();
+        if(this.state.username != undefined || this.state.password != undefined) {
+            this.props.onLogin(this.state.username, this.state.password);         
+        } else {
+            this.addError.bind(this)
+        }
     }
  
     toggleRoute (e) {
         let alt = (this.state.route === 'Login') ? 'SignUp' : 'Login';
         this.setState({ route: alt });
         e.preventDefault();
+    }
+
+    addError() {
+        this.setState = {
+            ...this.state,
+            placeholderUsername:'⚠️ email',
+            placedholderPassword:'⚠️ password'
+        }
     }
  
     render () {
@@ -63,7 +77,7 @@ class Login extends Component {
                         <Text style={styles.buttonText}>LOGIN</Text>
                     </TouchableOpacity>
                     <TouchableOpacity>
-                        <Text style={styles.text} onPress={(e) => this.toggleRoute(e)}>{alt}</Text>
+                        <Text style={styles.text} onPress={(e) => this.toggleRoute(e)}>- {alt} -</Text>
                     </TouchableOpacity>
             </KeyboardAvoidingView>
         );
@@ -82,7 +96,13 @@ const styles = StyleSheet.create({
         height:50,
         marginBottom: 20,
         color:"#ffffff",
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
+        borderWidth:2,
+        borderColor:'rgba(236,167,44,.9)',
+    },
+    error : {
+        borderWidth:2,
+        borderColor:'rgba(236,167,44,.9)',
     },
     buttonContainer: {
         backgroundColor:'#41873f',
