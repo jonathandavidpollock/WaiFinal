@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableHighlight, Image, StyleSheet, Linking } from 'react-native';
+import { Text, View, TouchableHighlight, Image, StyleSheet, Linking, Dimensions } from 'react-native';
 // import Icon from 'react-native-vector-icons/Ionicons'
 import img from '../img/WatchLive.jpg'
 
@@ -17,10 +17,9 @@ const Media = () => {
                             source={img}
                             style={styles.img}
                             />
+                         
                     </TouchableHighlight>
-                </View>
-                <View style={styles.contentContainer}>
-                    <Text style={styles.subText}>Watch Live</Text>
+                    {/* <Text style={styles.subText}>Watch Live</Text> */}
                 </View>
             </View>
         )
@@ -28,17 +27,19 @@ const Media = () => {
 
 const styles = StyleSheet.create({
     mediaContainer: {
-
+        flexWrap: 'wrap',
+        flexDirection:'row',
+        justifyContent:"space-around"
     },
     imageContainer: {
-       flexDirection:'row'
+       flexDirection:'column',
+       justifyContent:'center',
+        marginBottom:20,
+        marginTop:10
     },
     img: {
-        width:160,
-        height:160,
-    },
-    contentContainer: {
-
+        flexDirection:'column',
+        justifyContent:'center'
     },
     subText:{
         fontSize:12,

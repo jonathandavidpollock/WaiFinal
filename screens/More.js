@@ -18,6 +18,12 @@ export default class More extends Component {
                         />
                 </View>
                 <View style={styles.mainContent}>
+                    <Button title="Twitter" onPress={()=> console.log('e')}/>
+                    <Button title="Facebook" onPress={()=> console.log('e')}/>
+                    <Button title="Website" onPress={()=> console.log('e')}/>
+                    <Button title="Twitter" onPress={()=> console.log('e')}/>
+                    <Button title="Twitter" onPress={()=> console.log('e')}/>
+                    <Button title="Twitter" onPress={()=> console.log('e')}/>
                 </View> 
             </View>
         )

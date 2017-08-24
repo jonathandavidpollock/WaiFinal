@@ -20,14 +20,7 @@ export default class Home extends Component {
                         style={styles.logo}
                         />
                 </View>
-                <View style={styles.contentContainer}>
-                    <View style={styles.mediaContainer}>
-                     {getMedia()}
-                    </View>
-                    <View style={styles.mediaContainer}>
-                     {getMedia()}
-                    </View>
-                </View>
+                {getMedia()}
             </ScrollView>
         )
     }
@@ -36,7 +29,7 @@ export default class Home extends Component {
 
 const getMedia = () => {
     return(
-        <View>
+        <View style={styles.imageContainer}>
             <TouchableOpacity>
                 <Media/>
             </TouchableOpacity>
