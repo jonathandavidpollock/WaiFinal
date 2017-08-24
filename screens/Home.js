@@ -50,10 +50,14 @@ const getMedia = () => {
 const styles = StyleSheet.create({
     container:{
         backgroundColor:'#222222',
+        flex:1
     },
     imageContainer: {
         alignSelf:'stretch',
         flexDirection:'row',
+        flex:1,
+        flexWrap:'wrap',
+        justifyContent:'space-around'
     },
     logo: {
         alignSelf:"stretch",
