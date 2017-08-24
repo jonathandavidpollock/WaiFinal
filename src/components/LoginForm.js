@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
-import { Text, View, TextInput, StyleSheet, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
+import { Text, View, TextInput, StyleSheet, TouchableOpacity, StatusBar, KeyboardAvoidingView } from 'react-native';
 
 
 class LoginForm extends Component {
     render(){
         return (
             <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset={480} style={styles.container}>
+                <StatusBar
+                    barStyle="light-content"
+                    />
                 <TextInput 
                     placeholder="email" 
                     placeholderTextColor="rgba(255,255,255,0.4)"
                     returnKeyType="next"
                     onSubmitEditing={()=> this.passwordInput.focus()}
+                    keyboardType="email-address"
+                    autoCapitalize="none"
+                    autoCorrect={false}
                     style={styles.input}
                     />
                 <TextInput 
