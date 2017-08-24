@@ -7,7 +7,7 @@ import Media from '../components/media'
 export default class Login extends Component {   
     render() {
         return (
-            <View>
+            <View style={styles.container}>
             </View>
         )
     }
