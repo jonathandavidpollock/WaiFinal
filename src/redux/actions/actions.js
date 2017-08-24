@@ -37,9 +37,10 @@ export function getMessagesRequested() {
         type: GET_MESSAGES_REQUESTED
     }
 }
-export function getMessagesSuccess() {
+export function getMessagesSuccess(messages) {
     return {
-        type: GET_MESSAGES_SUCCESS
+        type: GET_MESSAGES_SUCCESS,
+        payload: messages
     }
 }
 
