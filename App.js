@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { TabNavigator, StackNavigator, DrawerNavigator } from 'react-navigation'
-import { Home, Messages, More, Events } from './src/screens'
+import { Home, Messages, More, Events, Login } from './src/screens'
 import Icon from 'react-native-vector-icons/Ionicons'
 
 export const SideBar = DrawerNavigator({
@@ -119,4 +119,4 @@ const styles = StyleSheet.create({
 })
 
 
-export default Navigation
+export default Login
