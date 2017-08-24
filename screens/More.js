@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Text, View, Button } from 'react-native'
+import { Text, View, Button, StyleSheet, Dimensions, Image } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
-
+import logo from '../img/Main.jpg'
 export default class More extends Component {
     static navigationOptions = {
         title: 'More',
@@ -11,13 +11,39 @@ export default class More extends Component {
         const {navigate} = this.props.navigation;
         return(
             <View>
-                <Text>This is the Home Page</Text>
-                <Button 
-                    title="Back to Home"
-                    onPress={
-                        ()=> navigate("Home",{})
-                    }/>
+                <View style={styles.imageContainer}>
+                    <Image
+                        source={logo}
+                        style={styles.logo}
+                        />
+                </View>
+                <View style={styles.mainContent}>
+                </View> 
             </View>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    container:{
+        backgroundColor:'#222222',
+    },
+    mainContent: {
+        backgroundColor:'#222222'
+    },
+    imageContainer: {
+        alignSelf:'stretch',
+        flexDirection:'row',
+    },
+    logo: {
+        alignSelf:"stretch",
+        width: Dimensions.get("window").width,
+    },
+    mediaContainer: {
+        margin:15,
+    },
+    contentContainer: {
+        flexDirection:'row'
+    }
+
+})

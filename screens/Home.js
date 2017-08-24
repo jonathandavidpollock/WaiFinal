@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Button, Image, StyleSheet, ScrollView, Dimensions, TouchableOpacity } from 'react-native';
+import { Text, View, Button, Image, StyleSheet, ScrollView, Dimensions, TouchableOpacity, StatusBar } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 import logo from '../img/Main.jpg'
 import Media from '../components/media'
@@ -14,6 +14,7 @@ export default class Home extends Component {
         return (
             <ScrollView  contentContainerStyle={styles.container}>
                 <View style={styles.imageContainer}>
+                <StatusBar barStyle="light-content" />
                     <Image
                         source={logo}
                         style={styles.logo}
@@ -31,6 +32,7 @@ export default class Home extends Component {
         )
     }
 }
+
 
 const getMedia = () => {
     return(
@@ -57,13 +59,11 @@ const styles = StyleSheet.create({
         backgroundColor:'#222222',
     },
     imageContainer: {
-        height:150,
         alignSelf:'stretch',
         flexDirection:'row',
     },
     logo: {
         alignSelf:"stretch",
-        height:150,
         width: Dimensions.get("window").width,
     },
     mediaContainer: {
