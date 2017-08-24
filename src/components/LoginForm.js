@@ -30,6 +30,12 @@ class LoginForm extends Component {
                 <TouchableOpacity style={styles.buttonContainer}>
                     <Text style={styles.buttonText}>LOGIN</Text>
                 </TouchableOpacity>
+                <View>
+                    <Text>-or-</Text>
+                </View>
+                <TouchableOpacity style={styles.buttonContainer}>
+                    <Text style={styles.buttonText}>Create an Account</Text>
+                </TouchableOpacity>
             </KeyboardAvoidingView>
         )
     }

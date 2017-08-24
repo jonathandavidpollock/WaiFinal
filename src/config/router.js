@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { TabNavigator, StackNavigator, DrawerNavigator } from 'react-navigation'
 import { Home, Messages, More, Events, Login } from '../../src/screens'
 import Icon from 'react-native-vector-icons/Ionicons'
-import {connect } from 'react-redux'
+import { connect } from 'react-redux'
 import * as ActionCreators from '../redux/actions/actions'
 import bindActionCreators from 'redux'
 
