@@ -36,8 +36,7 @@ export const HomeStack = StackNavigator({
         </TouchableOpacity>), 
       headerTintColor:'#ffffff'
     }),
-  },
-
+  }
 })
 
 export const MessagesStack = StackNavigator({
@@ -47,12 +46,13 @@ export const MessagesStack = StackNavigator({
       title:`Messages`.toUpperCase(),
       headerStyle: {
         backgroundColor:'#41873f',
+
       },
       headerLeft:(
         <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
           <Icon name="md-menu" size={28} style={styles.hamburger} />
         </TouchableOpacity>), 
-      headerTintColor:'#ffffff'
+      headerTintColor:'#ffffff',
     }),
   }
 })

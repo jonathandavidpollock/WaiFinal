@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Text, View, Button } from 'react-native'
+import { Text, View, Button, ScrollView, StatusBar, StyleSheet, Image} from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
+import logo from '../img/Main.jpg'
 
 export default class Messages extends Component {
     static navigationOptions = {
@@ -10,14 +11,20 @@ export default class Messages extends Component {
     render() {
         const {navigate} = this.props.navigation;
         return(
-            <View>
-                <Text>This is the Message Page</Text>
-                <Button 
-                    title="Back to Home"
-                    onPress={
-                        ()=> navigate("Home",{})
-                    }/>
-            </View>
+
+            <ScrollView contentContainerStyle={styles.container}>
+                <View style={styles.imageContainer}>
+                <StatusBar barStyle="light-content" />
+                    <Image
+                        source={logo}
+                        style={styles.logo}
+                        />
+                </View>
+            </ScrollView>
         )
     }
 }
+
+const styles = StyleSheet.create({
+
+})
