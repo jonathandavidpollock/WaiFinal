@@ -1,6 +1,6 @@
 import { LOGIN } from '../actions/actions'
 
-export default function LoginReducer(state = {messages: {}, isLoading:false, error: none}) {
+export default function LoginReducer(state = {messages: {}, isLoading:false}, action) {
     switch(action.type) {
         case LOGIN: 
             return {
