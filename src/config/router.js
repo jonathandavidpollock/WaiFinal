@@ -138,16 +138,7 @@ const styles = StyleSheet.create({
 })
 
  
-const mapStateToProps = (state, ownProps) => {
-  return {
-      isLoggedIn: state.auth.isLoggedIn
-  };
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-      onLogout: () => { dispatch(logout()); }
-  }
-}
+const mapStateToProps = (state, ownProps) => ({isLoggedIn: state.auth.isLoggedIn});
+const mapDispatchToProps = (dispatch) => ({ onLogout: () => { dispatch(logout())}})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Router)
