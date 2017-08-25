@@ -59,17 +59,21 @@ const getMedia = () => {
 const styles = StyleSheet.create({
     container:{
         backgroundColor:'#222222',
-        flex:1
+        flexDirection:'column',
     },
     imageContainer: {
         alignSelf:'stretch',
         flexDirection:'row',
-        flex:1,
+        flex:2,
         flexWrap:'wrap',
-        justifyContent:'space-around'
+        justifyContent:'space-around',
+        flexBasis:50,
+        flexGrow:1,
+
     },
     logo: {
         alignSelf:"stretch",
+        flex:1,
         width: Dimensions.get("window").width,
     },
     mediaContainer: {

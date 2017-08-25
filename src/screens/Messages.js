@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Text, View, Button, ScrollView, StatusBar, StyleSheet, Image, Dimensions} from 'react-native'
+import { Text, View, Button, ScrollView, StatusBar, StyleSheet, Image, Dimensions, TouchableOpacity} from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import logo from '../img/Main.jpg'
+import Media from '../components/media'
 
 export default class Messages extends Component {
     static navigationOptions = {
@@ -19,12 +20,34 @@ export default class Messages extends Component {
                         style={styles.logo}
                         />
                 </View>
+                {getMedia()}
             </ScrollView>
         )
     }
 }
+const getMedia = () => {
+    return(
+        <View style={styles.imageContainer}>
+            <TouchableOpacity>
+                <Media/>
+            </TouchableOpacity>
+            <TouchableOpacity>
+                <Media/>
+            </TouchableOpacity>
+            <TouchableOpacity>
+                <Media/>
+            </TouchableOpacity>
+            <TouchableOpacity>
+                <Media/>
+            </TouchableOpacity>
+        </View>
+    );
+}
 
 const styles = StyleSheet.create({
+    container: {
+        backgroundColor: '#222222',
+    },
     imageContainer: {
         alignSelf:'stretch',
         flexDirection:'row',
