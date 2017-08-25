@@ -12,4 +12,3 @@ export default class DiscoveryChurchApplication extends Component {
     );
   }
 }
- 

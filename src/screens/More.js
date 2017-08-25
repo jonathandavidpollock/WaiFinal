@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, Button, StyleSheet, Dimensions, Image } from 'react-native'
+import { Linking,TouchableHighlight,Text, View, Button, StyleSheet, Dimensions, Image } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import logo from '../img/Main.jpg'
 export default class More extends Component {
@@ -10,7 +10,7 @@ export default class More extends Component {
     render() {
         const {navigate} = this.props.navigation;
         return(
-            <View>
+            <View style={styles.container}> 
                 <View style={styles.imageContainer}>
                     <Image
                         source={logo}
@@ -18,12 +18,52 @@ export default class More extends Component {
                         />
                 </View>
                 <View style={styles.mainContent}>
-                    <Button title="View Map" color="#C3C3C3" accessibilityLabel="View our church map" style={styles.btn} onPress={()=> console.log('e')}/>
-                    <Button title="Give" color="#C3C3C3" style={styles.btn} accessibilityLabel="Give to Discovery Church" onPress={()=> console.log('e')}/>
-                    <Button title="Instagram" color="#C3C3C3" style={styles.btn} accessibilityLabel="Follow us on Instagram" onPress={()=> console.log('e')}/>
-                    <Button title="Twitter" color="#C3C3C3" style={styles.btn} accessibilityLabel="Follow us on Twitter" onPress={()=> console.log('e')}/>
-                    <Button title="Facebook" color="#C3C3C3" style={styles.btn} accessibilityLabel="Vist our Facebook page" onPress={()=> console.log('e')}/>
-                    <Button title="Website" color="#C3C3C3" style={styles.btn} accessibilityLabel="Visit our website" onPress={()=> console.log('e')}/>
+                    <View style={styles.col1}>
+                        <TouchableHighlight style={styles.btn} onPress={() =>
+                            Linking
+                                .openURL('https://www.google.com/maps/place/4400+S+Orange+Ave,+Orlando,+FL+32806/@28.4957556,-81.3779973,17z/data=!3m1!4b1!4m5!3m4!1s0x88e77b7c55daa1d5:0x149a40781252ebc0!8m2!3d28.4957509!4d-81.3758086')
+                                .catch(console.log("error in promise"))
+                                }>
+                            <Text style={styles.btnText}>View Map</Text>
+                        </TouchableHighlight>
+                        <TouchableHighlight style={styles.btn} onPress={() =>
+                            Linking
+                                .openURL('https://discoveryfl.churchcenteronline.com/giving')
+                                .catch(console.log("error in promise"))
+                                }>
+                            <Text style={styles.btnText}>Give</Text>
+                        </TouchableHighlight>
+                        <TouchableHighlight style={styles.btn} onPress={() =>
+                            Linking
+                                .openURL('https://www.instagram.com/discoveryfl/')
+                                .catch(console.log("error in promise"))
+                                }>
+                            <Text style={styles.btnText}>Instagram</Text>
+                        </TouchableHighlight>
+                    </View>
+                    <View style={styles.col2}>
+                         <TouchableHighlight style={styles.btn} onPress={() =>
+                            Linking
+                                .openURL('https://www.google.com/maps/place/4400+S+Orange+Ave,+Orlando,+FL+32806/@28.4957556,-81.3779973,17z/data=!3m1!4b1!4m5!3m4!1s0x88e77b7c55daa1d5:0x149a40781252ebc0!8m2!3d28.4957509!4d-81.3758086')
+                                .catch(console.log("error in promise"))
+                                }>
+                            <Text style={styles.btnText}>Twitter</Text>
+                        </TouchableHighlight>
+                        <TouchableHighlight style={styles.btn} onPress={() =>
+                            Linking
+                                .openURL('https://discoveryfl.churchcenteronline.com/giving')
+                                .catch(console.log("error in promise"))
+                                }>
+                            <Text style={styles.btnText}>Facebook</Text>
+                        </TouchableHighlight>
+                        <TouchableHighlight style={styles.btn} onPress={() =>
+                            Linking
+                                .openURL('https://www.instagram.com/discoveryfl/')
+                                .catch(console.log("error in promise"))
+                                }>
+                            <Text style={styles.btnText}>Website</Text>
+                        </TouchableHighlight>
+                    </View>
                 </View> 
                 <View style={styles.descriptionArea}>
                     <Text style={styles.description}>
@@ -41,14 +81,17 @@ export default class More extends Component {
 
 const styles = StyleSheet.create({
     container:{
+        flex:1,
         backgroundColor:'#222222',
     },
     mainContent: {
-        backgroundColor:'#222222'
+        backgroundColor:'#222222',
+        flexDirection:'column',
+        flex:1,
     },
     imageContainer: {
         alignSelf:'stretch',
-        flexDirection:'row',
+        flexDirection:'column',
     },
     logo: {
         alignSelf:"stretch",
@@ -65,11 +108,28 @@ const styles = StyleSheet.create({
     },
     description: {
         color:'#888888',
+        padding:10,
+    },
+    col1: {
+        padding:10,
+        justifyContent:'center',
+        alignItems:'stretch',
+    },
+    col2: {
+        padding:10,
+        justifyContent:'center',
+        alignItems:'center',
     },
     btn: {
         backgroundColor:'#1A1A1A',
-        margin:100,
-        color:'#C3C3C3',
+        marginTop:30,
+        padding:15,
+        justifyContent:'center',
+        
+    },
+    btnText: {
+        color: '#ffffff',
+        textAlign:'center'
     }
 
 })
