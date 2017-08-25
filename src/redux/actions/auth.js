@@ -10,8 +10,6 @@ export const login = (username, password) => {
 };
 
 export const fetchUser = ({ email, password }) => {
-    // redux-thunk gives access to dispatch & allows waiting for promise returns
-    // dispatch of the action is not invoked until promise returns
     return (dispatch) => {
       dispatch({ type: LOGIN_USER_START });
 

@@ -6,7 +6,6 @@ import img from '../img/WatchLive.jpg'
 
 const Media = () => {
         return (
-            <View style={styles.mediaContainer}>
                 <View style={styles.imageContainer}>
                     <TouchableHighlight onPress={() =>
                         Linking
@@ -17,11 +16,9 @@ const Media = () => {
                             source={img}
                             style={styles.img}
                             />
-                         
                     </TouchableHighlight>
-                    {/* <Text style={styles.subText}>Watch Live</Text> */}
+                    <Text style={styles.subText}>Watch Live</Text>
                 </View>
-            </View>
         )
 }
 

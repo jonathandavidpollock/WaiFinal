@@ -7,10 +7,10 @@ import { connect } from 'react-redux'
 import { logout } from '../redux/actions/auth';
 
 
-// function userLogout(e) {
-//   this.props.onLogout();
-//   e.preventDefault();
-// }
+function userLogout(e) {
+  this.props.onLogout();
+  e.preventDefault();
+}
 
 
 const HomeStack = StackNavigator({
@@ -26,7 +26,7 @@ const HomeStack = StackNavigator({
             <Icon name="md-menu" size={28} style={styles.hamburger} />
           </TouchableOpacity>), 
         headerRight:(
-          <TouchableOpacity onPress={()=> console.log(this)}>
+          <TouchableOpacity onPress={(e)=> userLogout(e)}>
             <Icon name="ios-power-outline" size={28} style={styles.logout} />
           </TouchableOpacity>), 
   

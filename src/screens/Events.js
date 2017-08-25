@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, Button } from 'react-native'
+import { FlatList, Text, View, Button } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 
 export default class Events extends Component {
@@ -10,9 +10,12 @@ export default class Events extends Component {
     render() {
         const {navigate} = this.props.navigation;
         return(
-            <View>
 
-            </View>
+            <FlatList
+            data={[{key: 'Central Events'}, {key: 'Southwest Events'},{key: 'East Events'}]}
+            renderItem={({item}) => <Text>{item.key}</Text>}
+            />
+
         )
     }
 }

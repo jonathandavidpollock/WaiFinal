@@ -49,7 +49,7 @@ class Login extends Component {
                     
                     <View style={styles.logoContainer}>
                         <Image source={Logo} style={styles.logo}/>
-                        <Text style={styles.title}>Our mission is to make disciples</Text>
+                        <Text style={styles.title}>Our mission is to make disciples of Jesus</Text>
                     </View>
                     <TextInput 
                         placeholder="email" 

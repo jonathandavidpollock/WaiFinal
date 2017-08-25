@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { TabNavigator, StackNavigator, DrawerNavigator } from 'react-navigation'
 import { Home, Messages, More, Events, Login } from '../screens'
@@ -8,7 +8,7 @@ import { logout } from '../redux/actions/auth';
 import * as ActionCreators from '../redux/actions/auth'
 import bindActionCreators from 'redux'
 import {EventsStack, HomeStack, MessagesStack, MoreStack} from '../config/combinedRouters'
-  
+
 
 const Router = TabNavigator({
   Home: {screen: HomeStack},
@@ -39,8 +39,9 @@ const styles = StyleSheet.create({
   }
 })
 
+
  
 const mapStateToProps = (state, ownProps) => ({isLoggedIn: state.auth.isLoggedIn});
-const mapDispatchToProps = (dispatch) => ({ onLogout: () => { dispatch(logout())}})
+const mapDispatchToProps = (dispatch, ownProps) => ({ onLogout: () => { dispatch(logout())}})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Router)
