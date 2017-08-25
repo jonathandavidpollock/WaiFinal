@@ -9,104 +9,14 @@ import * as ActionCreators from '../redux/actions/auth'
 import bindActionCreators from 'redux'
 
 
-export const SideBar = DrawerNavigator({
-  Home: {
-    screen: Home,
-    navigationOptions: {
-      drawer: {
-          label: 'Drawer 1',
-          icon: ({ tintColor }) => <Icon name="" size={24} />
-      },
-  },
-  },
-  Inbox: {
-    screen: Home
-  },
-  Settings: {
-    screen: Home
-  },
-})
 
 // function userLogout(e) {
 //   this.props.onLogout();
 //   e.preventDefault();
 // }
 
-export const HomeStack = StackNavigator({
-  Home: {
-    screen: Home, 
-    navigationOptions: ({ navigation, tintColor }) => ({
-      title:`Discovery`.toUpperCase(),
-      headerStyle: {
-        backgroundColor:'#41873f',
-      },
-      headerLeft:(
-        <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
-          <Icon name="md-menu" size={28} style={styles.hamburger} />
-        </TouchableOpacity>), 
-      headerRight:(
-        <TouchableOpacity onPress={() => console.log(this)}>
-          <Icon name="ios-power-outline" size={28} style={styles.logout} />
-        </TouchableOpacity>), 
+import {EventsStack, HomeStack, MessagesStack, MoreStack} from '../config'
 
-      headerTintColor:'#ffffff'
-    }),
-  }
-})
-
-export const MessagesStack = StackNavigator({
-  Messages: {
-    screen: Messages, 
-    navigationOptions: ({ navigation, tintColor }) => ({
-      title:`Messages`.toUpperCase(),
-      headerStyle: {
-        backgroundColor:'#41873f',
-
-      },
-      headerLeft:(
-        <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
-          <Icon name="md-menu" size={28} style={styles.hamburger} />
-        </TouchableOpacity>), 
-      headerTintColor:'#ffffff',
-    }),
-  }
-})
-
-
-export const EventsStack = StackNavigator({
-  Events: {
-    screen: Events, 
-    navigationOptions: ({ navigation, tintColor }) => ({
-      title:`Events`.toUpperCase(),
-      headerStyle: {
-        backgroundColor:'#41873f',
-      },
-      headerLeft:(
-        <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
-          <Icon name="md-menu" size={28} style={styles.hamburger} />
-        </TouchableOpacity>), 
-      headerTintColor:'#ffffff'
-    }),
-  }
-})
-
-
-export const MoreStack = StackNavigator({
-  More: {
-    screen: More, 
-    navigationOptions: ({ navigation, tintColor }) => ({
-      title:`More`.toUpperCase(),
-      headerStyle: {
-        backgroundColor:'#41873f',
-      },
-      headerLeft:(
-        <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
-          <Icon name="md-menu" size={28} style={styles.hamburger} />
-        </TouchableOpacity>), 
-      headerTintColor:'#ffffff'
-    }),
-  }
-})
 
 const Router = TabNavigator({
   Home: {screen: HomeStack},
