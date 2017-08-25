@@ -6,6 +6,13 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import { connect } from 'react-redux'
 import { logout } from '../redux/actions/auth';
 
+
+// function userLogout(e) {
+//   this.props.onLogout();
+//   e.preventDefault();
+// }
+
+
 const HomeStack = StackNavigator({
     Home: {
       screen: Home, 
@@ -19,7 +26,7 @@ const HomeStack = StackNavigator({
             <Icon name="md-menu" size={28} style={styles.hamburger} />
           </TouchableOpacity>), 
         headerRight:(
-          <TouchableOpacity onPress={()=> this.props.onLogout()}>
+          <TouchableOpacity onPress={()=> console.log(this)}>
             <Icon name="ios-power-outline" size={28} style={styles.logout} />
           </TouchableOpacity>), 
   
@@ -39,4 +46,6 @@ const HomeStack = StackNavigator({
     }
   })
 
-  export default HomeStack
+ 
+ 
+export default HomeStack

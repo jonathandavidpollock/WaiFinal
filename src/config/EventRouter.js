@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import { TabNavigator, StackNavigator, DrawerNavigator } from 'react-navigation'
+import { StackNavigator, DrawerNavigator } from 'react-navigation'
 import { Home, Messages, More, Events, Login } from '../screens'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { connect } from 'react-redux'

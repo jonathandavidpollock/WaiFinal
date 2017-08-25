@@ -7,16 +7,8 @@ import { connect } from 'react-redux'
 import { logout } from '../redux/actions/auth';
 import * as ActionCreators from '../redux/actions/auth'
 import bindActionCreators from 'redux'
-
-
-
-// function userLogout(e) {
-//   this.props.onLogout();
-//   e.preventDefault();
-// }
-
-import {EventsStack, HomeStack, MessagesStack, MoreStack} from '../config'
-
+import {EventsStack, HomeStack, MessagesStack, MoreStack} from '../config/combinedRouters'
+  
 
 const Router = TabNavigator({
   Home: {screen: HomeStack},
